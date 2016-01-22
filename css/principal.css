@@ -1,0 +1,39 @@
+			.fondo_Obscuro{
+				background-color:#555;
+			}
+			.fondo_Claro{
+				background-color:white;
+			}
+			.division{
+				height:60px;
+			}
+			.encabezado{
+				height:150px;
+			}
+			.homologa{
+				height:450px;
+			}
+			h1, h2{
+				font-family: 'Montserrat', sans-serif;
+				color:gray;
+			}
+			h4{
+				font-family: 'Roboto Slab', serif;
+				color:gray;
+			}
+			.separa_Linea{
+				font-family: 'Merriweather', serif;
+				color:gray;
+				line-height:2;
+			}
+			.carousel-indicators li {
+				/*border-color: #f4511e;*/
+				border-color:   #555555;
+			}
+			.item h4 {
+				font-size: 19px;
+				line-height: 1.375em;
+				font-weight: 400;
+				font-style: italic;
+				margin: 50px 0;
+			}
