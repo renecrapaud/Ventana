@@ -1,5 +1,6 @@
-	//--------------------------------------------------Agrega efecto de velocidad lenta al subir al inicio de la página
 		$(document).ready(function(){
+			
+		//--------------------------------------------------Agrega efecto de velocidad lenta al subir al inicio de la página
 			// Initialize Tooltip
 			$('[data-toggle="tooltip"]').tooltip(); 
 
@@ -22,4 +23,43 @@
 				window.location.hash = hash;
 				});
 			});
+			
+			//-------------------------    Reiniciar barra animada de carousel   ----------------------------
+			$("#carousel-2").on('slide.bs.carousel', function () {
+				var indicador = document.getElementById("indicador");
+				indicador.style.width= "0%";
+				actualprogress=0;
+				clearInterval(itv);
+				itv = 0;
+				itv = setInterval(prog,50);
+			});
+			$("#carousel-2").mouseover(function(){
+				var indicador = document.getElementById("indicador");
+				indicador.style.width= "0%";
+				actualprogress=0;
+				clearInterval(itv);
+			});
+			$("#carousel-2").mouseout(function(){
+				itv = setInterval(prog,50);
+			});
+			
 		})
+
+		// -------------------------------------------------- Inicio de avance de barra			
+			//var barraAvance = document.getElementById("avanceSlider");
+			//barraAvance.style.width = "30%";
+
+			var maxprogress = 100;
+			var actualprogress = 0;
+			var itv = 0;
+			function prog(){
+				if(actualprogress >= maxprogress){
+				clearInterval(itv);   	
+				return;
+			}	
+			//var progressnum = document.getElementById("progressnum");
+			var indicador = document.getElementById("indicador");
+			actualprogress += 1;	
+			indicador.style.width=actualprogress + "%";
+			//progressnum.innerHTML = (maxprogress - actualprogress) + " MS Faltantes";
+			}
